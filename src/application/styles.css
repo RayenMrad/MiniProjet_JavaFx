@@ -1,0 +1,223 @@
+/* Root styles for the entire application */
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #F5F5F5; /* Light gray background for the main pane */
+}
+
+/* Sidebar pane styling */
+Pane[style="-fx-background-color: #05204A;"] {
+    -fx-background-color: #05204A; /* Dark blue sidebar background */
+    -fx-border-color: #05204A;
+    -fx-border-width: 2px;
+}
+
+/* Main content pane styling */
+Pane[style*="-fx-border-radius: 10;"] {
+    -fx-background-color: #FFFFFF; /* White background for main content */
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #05204A;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+}
+
+/* Individual menu item panes */
+Pane[style*="-fx-border-color: #05204A;"] {
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #05204A;
+    -fx-border-width: 1px;
+    -fx-padding: 10;
+}
+
+Pane[style*="-fx-border-color: #05204A;"]:hover {
+    -fx-background-color: #E6F0FA; /* Light blue hover effect */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+}
+
+/* Button styling */
+Button {
+    -fx-background-color: #05204A; /* Dark blue button background */
+    -fx-text-fill: #FFFFFF; /* White text */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+}
+
+Button:hover {
+    -fx-background-color: #0A3878; /* Lighter blue on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 2);
+}
+
+Button:pressed {
+    -fx-background-color: #031A3A; /* Darker blue when pressed */
+}
+
+/* Sidebar buttons */
+Pane[style="-fx-background-color: #05204A;"] Button {
+    -fx-background-color: transparent; /* Transparent background for sidebar buttons */
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 20;
+    -fx-border-color: transparent;
+}
+
+Pane[style="-fx-background-color: #05204A;"] Button:hover {
+    -fx-background-color: #0A3878; /* Light blue hover effect */
+    -fx-background-radius: 5;
+}
+
+Pane[style="-fx-background-color: #05204A;"] Button:pressed {
+    -fx-background-color: #031A3A;
+}
+
+/* Specific styling for category buttons (Tous, Nos Entrées, etc.) */
+Pane[style*="-fx-border-radius: 10;"] > Button {
+    -fx-background-color: #E6E6E6; /* Light gray for category buttons */
+    -fx-text-fill: #05204A;
+    -fx-font-size: 12px;
+    -fx-font-weight: normal;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 5 10;
+}
+
+Pane[style*="-fx-border-radius: 10;"] > Button:hover {
+    -fx-background-color: #D1D1D1; /* Slightly darker gray on hover */
+}
+
+Pane[style*="-fx-border-radius: 10;"] > Button:pressed {
+    -fx-background-color: #B8B8B8; /* Darker gray when pressed */
+}
+
+/* Label styling */
+Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333; /* Dark gray text for readability */
+}
+
+Pane[style="-fx-background-color: #05204A;"] Label {
+    -fx-text-fill: #FFFFFF; /* White text for sidebar labels */
+    -fx-font-size: 17px;
+}
+
+/* Menu item labels */
+Pane[style*="-fx-border-color: #05204A;"] Label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #05204A;
+    -fx-wrap-text: true;
+}
+
+/* TableView styling */
+TableView {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #05204A;
+    -fx-border-width: 1px;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-font-size: 12px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #05204A;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #FFFFFF;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #333333;
+    -fx-alignment: CENTER;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #F5F5F5;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #FFFFFF;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #E6F0FA; /* Light blue hover effect */
+}
+
+/* TextField styling */
+TextField {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #05204A;
+    -fx-border-width: 1px;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-font-size: 12px;
+    -fx-padding: 5;
+}
+
+TextField:focused {
+    -fx-border-color: #0A3878; /* Lighter blue when focused */
+    -fx-border-width: 2px;
+}
+
+/* Spinner styling */
+Spinner {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #05204A;
+    -fx-border-width: 1px;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+Spinner .text-field {
+    -fx-font-size: 12px;
+    -fx-text-fill: #333333;
+}
+
+Spinner .increment-arrow-button, Spinner .decrement-arrow-button {
+    -fx-background-color: #05204A;
+}
+
+Spinner .increment-arrow-button:hover, Spinner .decrement-arrow-button:hover {
+    -fx-background-color: #0A3878;
+}
+
+/* ScrollBar styling */
+ScrollBar {
+    -fx-background-color: #F5F5F5;
+}
+
+ScrollBar .track {
+    -fx-background-color: #E6E6E6;
+    -fx-background-radius: 5;
+}
+
+ScrollBar .thumb {
+    -fx-background-color: #05204A;
+    -fx-background-radius: 5;
+}
+
+ScrollBar .thumb:hover {
+    -fx-background-color: #0A3878;
+}
+
+/* Circle styling for user icon */
+Circle {
+    -fx-fill: #FFFFFF;
+    -fx-stroke: #05204A;
+    -fx-stroke-width: 2px;
+}
+
+/* Line styling for sidebar separator */
+Line {
+    -fx-stroke: #FFFFFF;
+    -fx-stroke-width: 2px;
+}
