@@ -2,24 +2,17 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-<?import java.lang.String?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="763.0" prefWidth="1753.0" style="-fx-border-color: #05204A;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <stylesheets>
-   <String fx:value="/application/styles.css" />
-</stylesheets>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="763.0" prefWidth="1753.0" style="-fx-border-color: #05204A;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ServerController">
    <children>
       <Pane layoutY="-6.0" prefHeight="770.0" prefWidth="238.0" style="-fx-background-color: #05204A;">
          <children>
@@ -30,27 +23,22 @@
             </Label>
             <Line endX="118.99998474121094" endY="-40.0" layoutX="119.0" layoutY="104.0" startX="-119.0" startY="-40.0" stroke="WHITE" />
             <Circle fill="WHITE" layoutX="37.0" layoutY="98.0" radius="23.0" stroke="WHITE" strokeType="INSIDE" />
-            <Label layoutX="73.0" layoutY="85.0" text="Bienvenue, Rayen" textFill="WHITE">
+            <Label fx:id="welcomeLabel" layoutX="73.0" layoutY="85.0" text="Bienvenue, Serveur" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <Button layoutX="11.0" layoutY="193.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="217.0" text="        Consulter les commandes">
+            <Button fx:id="consultCommandesBtn" layoutX="11.0" layoutY="193.0" mnemonicParsing="false" onAction="#onConsultCommandes" prefHeight="46.0" prefWidth="217.0" text="        Consulter les commandes">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="11.0" layoutY="277.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="217.0" text="       Ajouter une commande">
+            <Button fx:id="logoutBtn" layoutX="11.0" layoutY="680.0" mnemonicParsing="false" onAction="#onLogout" prefHeight="46.0" prefWidth="217.0" text="Déconnexion">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="11.0" layoutY="680.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="217.0" text="Déconnexion">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Button>
-            <Button layoutX="11.0" layoutY="362.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="217.0" text="Menu">
+            <Button fx:id="menuBtn" layoutX="11.0" layoutY="300.0" mnemonicParsing="false" onAction="#onMenu" prefHeight="46.0" prefWidth="217.0" text="Menu">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -59,132 +47,19 @@
       </Pane>
       <Pane layoutX="253.0" layoutY="28.0" prefHeight="702.0" prefWidth="1480.0" style="-fx-border-radius: 10; -fx-border-color: #05204A;">
          <children>
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Tous" />
-            <Button layoutX="64.0" layoutY="14.0" mnemonicParsing="false" text="Nos Entrées" />
-            <Button layoutX="152.0" layoutY="14.0" mnemonicParsing="false" text="Nos Pizzas" />
-            <Button layoutX="231.0" layoutY="14.0" mnemonicParsing="false" text="Nos Pâtes" />
-            <Button layoutX="308.0" layoutY="14.0" mnemonicParsing="false" text="Nos Poissons" />
-            <Button layoutX="396.0" layoutY="14.0" mnemonicParsing="false" text="Nos Viandes" />
-            <Button layoutX="485.0" layoutY="14.0" mnemonicParsing="false" text="Nos Burgers" />
-            <Button layoutX="573.0" layoutY="14.0" mnemonicParsing="false" text="Nos Plats Végétariens" />
-            <Button layoutX="712.0" layoutY="14.0" mnemonicParsing="false" text="Nos Soupes" />
-            <Button layoutX="799.0" layoutY="14.0" mnemonicParsing="false" text="Nos Desserts" />
-            <Button layoutX="886.0" layoutY="14.0" mnemonicParsing="false" text="Nos Boissons" />
-            <AnchorPane layoutX="12.0" layoutY="54.0" prefHeight="625.0" prefWidth="1051.0">
-               <children>
-                  <ScrollBar layoutY="611.0" prefHeight="14.0" prefWidth="1051.0" />
-                  <ScrollBar layoutX="1037.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="612.0" prefWidth="14.0" />
-                  <Pane layoutX="45.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #05204A;">
-                     <children>
-                        <Label layoutX="22.0" layoutY="14.0" text="Pizza Margherita – 18,00 TND" />
-                        <Label layoutX="130.0" layoutY="14.0" />
-                        <ImageView fitHeight="98.0" fitWidth="154.0" layoutX="38.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/margherita.jpg" />
-                           </image>
-                        </ImageView>
-                        <Button layoutX="130.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #05204A;" text="Add" textFill="WHITE" />
-                        <Spinner layoutX="38.0" layoutY="155.0" prefHeight="25.0" prefWidth="88.0" />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="304.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #05204A;">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Spaghetti Bolognaise – 22,00 TND" />
-                        <Label layoutX="130.0" layoutY="14.0" />
-                        <ImageView fitHeight="98.0" fitWidth="108.0" layoutX="71.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/Spaghetti%20Bolognaise.png" />
-                           </image>
-                        </ImageView>
-                        <Button layoutX="130.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #05204A;" text="Add" textFill="WHITE" />
-                        <Spinner layoutX="38.0" layoutY="155.0" prefHeight="25.0" prefWidth="88.0" />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="554.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #05204A;">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Filet de Dorade Grillé – 28,50 TND" />
-                        <Label layoutX="130.0" layoutY="14.0" />
-                        <ImageView fitHeight="98.0" fitWidth="154.0" layoutX="55.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/DoradeGrillé.png" />
-                           </image>
-                        </ImageView>
-                        <Button layoutX="130.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #05204A;" text="Add" textFill="WHITE" />
-                        <Spinner layoutX="38.0" layoutY="155.0" prefHeight="25.0" prefWidth="88.0" />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="806.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #05204A;">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" />
-                        <Label layoutX="12.0" layoutY="14.0" prefHeight="17.0" prefWidth="180.0" text="Burger Classique  – 19,90 TND" />
-                        <ImageView fitHeight="98.0" fitWidth="154.0" layoutX="53.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/Burger%20Classique.png" />
-                           </image>
-                        </ImageView>
-                        <Button layoutX="130.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #05204A;" text="Add" textFill="WHITE" />
-                        <Spinner layoutX="38.0" layoutY="155.0" prefHeight="25.0" prefWidth="88.0" />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="806.0" layoutY="239.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #05204A;">
-                     <children>
-                        <Label layoutX="26.0" layoutY="14.0" text="Tiramisu Maison – 9,00 TND" />
-                        <Label layoutX="130.0" layoutY="14.0" />
-                        <ImageView fitHeight="98.0" fitWidth="154.0" layoutX="51.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/Tiramisu%20Maison.png" />
-                           </image>
-                        </ImageView>
-                        <Button layoutX="130.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #05204A;" text="Add" textFill="WHITE" />
-                        <Spinner layoutX="38.0" layoutY="155.0" prefHeight="25.0" prefWidth="88.0" />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="554.0" layoutY="239.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #05204A;">
-                     <children>
-                        <Label layoutX="6.0" layoutY="14.0" text="Salade César au Poulet – 16,50 TND" />
-                        <Label layoutX="130.0" layoutY="14.0" />
-                        <ImageView fitHeight="98.0" fitWidth="154.0" layoutX="51.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/Salade%20César%20au%20Poulet.png" />
-                           </image>
-                        </ImageView>
-                        <Button layoutX="130.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #05204A;" text="Add" textFill="WHITE" />
-                        <Spinner layoutX="38.0" layoutY="155.0" prefHeight="25.0" prefWidth="88.0" />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="304.0" layoutY="239.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #05204A;">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Lasagnes à la Viande – 21,00 TND" />
-                        <Label layoutX="130.0" layoutY="14.0" />
-                        <ImageView fitHeight="98.0" fitWidth="154.0" layoutX="70.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/Lasagnes%20à%20la%20Viande.png" />
-                           </image>
-                        </ImageView>
-                        <Button layoutX="130.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #05204A;" text="Add" textFill="WHITE" />
-                        <Spinner layoutX="38.0" layoutY="155.0" prefHeight="25.0" prefWidth="88.0" />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="45.0" layoutY="239.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #05204A;">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="180.0" text="Escalope de Poulet  – 24,00 TND" />
-                        <Label layoutX="130.0" layoutY="14.0" />
-                        <ImageView fitHeight="98.0" fitWidth="154.0" layoutX="55.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/Escalope%20de%20Poulet.png" />
-                           </image>
-                        </ImageView>
-                        <Button layoutX="130.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #05204A;" text="Add" textFill="WHITE" />
-                        <Spinner layoutX="38.0" layoutY="155.0" prefHeight="25.0" prefWidth="88.0" />
-                     </children>
-                  </Pane>
-               </children>
-            </AnchorPane>
-            <TableView layoutX="1079.0" layoutY="54.0" prefHeight="336.0" prefWidth="393.0">
+            <!-- Category buttons will be dynamically added here by the controller -->
+            <ScrollPane layoutX="12.0" layoutY="54.0" prefHeight="625.0" prefWidth="1051.0">
+               <content>
+                  <AnchorPane fx:id="menuPane" prefHeight="623.0" prefWidth="1050.0">
+                     <!-- Menu items will be dynamically added here by the controller -->
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <TableView fx:id="orderTableView" layoutX="1079.0" layoutY="54.0" prefHeight="336.0" prefWidth="393.0">
               <columns>
-                <TableColumn prefWidth="219.0" text="Nom Du plat" />
-                <TableColumn prefWidth="87.0" text="Quantité" />
-                <TableColumn prefWidth="86.0" text="Prix" />
+                <TableColumn fx:id="nomPlatColumn" prefWidth="219.0" text="Nom Du plat" />
+                <TableColumn fx:id="quantiteColumn" prefWidth="87.0" text="Quantité" />
+                <TableColumn fx:id="prixColumn" prefWidth="86.0" text="Prix" />
               </columns>
             </TableView>
             <Label layoutX="1204.0" layoutY="404.0" prefHeight="27.0" prefWidth="79.0" text="Total  :">
@@ -192,7 +67,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="1269.0" layoutY="409.0" prefHeight="17.0" prefWidth="129.0" text="0.0 DT">
+            <Label fx:id="totalLabel" layoutX="1269.0" layoutY="409.0" prefHeight="17.0" prefWidth="129.0" text="0.0 DT">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -202,20 +77,21 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="1302.0" layoutY="446.0" text="0.0 DT" />
+            <TextField fx:id="amountField" layoutX="1302.0" layoutY="446.0" text="0.0" />
             <Label layoutX="1204.0" layoutY="482.0" prefHeight="27.0" prefWidth="98.0" text="Change :">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="1296.0" layoutY="487.0" prefHeight="17.0" prefWidth="129.0" text="0.0 DT">
+            <Label fx:id="changeLabel" layoutX="1296.0" layoutY="487.0" prefHeight="17.0" prefWidth="129.0" text="0.0 DT">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button layoutX="1079.0" layoutY="527.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="393.0" text="Pay" />
-            <Button layoutX="1115.0" layoutY="566.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Remove" />
-            <Button layoutX="1307.0" layoutY="566.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Menu" />
+            <Button fx:id="payBtn" layoutX="1079.0" layoutY="527.0" mnemonicParsing="false" onAction="#onPay" prefHeight="25.0" prefWidth="393.0" text="Pay" />
+            <Button fx:id="removeBtn" layoutX="1115.0" layoutY="566.0" mnemonicParsing="false" onAction="#onRemove" prefHeight="25.0" prefWidth="129.0" text="Remove" />
+            <Label layoutX="1079.0" layoutY="405.0" text="Table #:" />
+            <TextField fx:id="tableNumberField" layoutX="1130.0" layoutY="401.0" prefHeight="25.0" prefWidth="61.0" promptText="1" />
          </children>
       </Pane>
    </children>

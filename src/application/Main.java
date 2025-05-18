@@ -10,22 +10,17 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            // Load FXML file properly
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("serveurMenu.fxml"));
-            Parent root = loader.load(); // Load FXML into root
-            
-            Scene scene = new Scene(root, 400, 400);
-            
-            scene.getStylesheets().add(getClass().getResource("/application/styles.css").toExternalForm());
-            
+            // Load FXML from the correct path
+            Parent root = FXMLLoader.load(getClass().getResource("/application/serveurMenu.fxml"));
+            Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Awled Moufida Restaurant"); // Set window title
+            primaryStage.setTitle("Restaurant Awled Moufida");
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
+    
     public static void main(String[] args) {
         launch(args);
     }
