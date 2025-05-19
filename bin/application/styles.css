@@ -221,3 +221,65 @@ Line {
     -fx-stroke: #FFFFFF;
     -fx-stroke-width: 2px;
 }
+
+
+/* Form Titles */
+.form-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #05204A;
+}
+
+/* Text Fields and Password Fields */
+.form-field {
+    -fx-pref-width: 300px;
+    -fx-padding: 10px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-background-color: #F3F3F3;
+    -fx-border-color: #B0BEC5;
+    -fx-font-size: 14px;
+}
+
+/* Text Field Focus Effect */
+.form-field:focused {
+    -fx-border-color: #0A2342;
+    -fx-background-color: #ffffff;
+}
+
+/* Form Button */
+.form-btn {
+    -fx-background-color: #0A2342;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.form-btn:hover {
+    -fx-background-color: #183d6c;
+}
+
+/* Switch Button (on side panel) */
+.side-switch-btn {
+    -fx-background-color: white;
+    -fx-text-fill: #0A2342;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 10 24 10 24;
+    -fx-border-color: white;
+    -fx-cursor: hand;
+}
+
+.side-switch-btn:hover {
+    -fx-background-color: #dbe9f4;
+}
+
+/* Error Label */
+.error-label {
+    -fx-text-fill: #D32F2F;
+    -fx-font-size: 13px;
+    -fx-padding: 4px;
+}

@@ -11,8 +11,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             // Load FXML from the correct path
-            Parent root = FXMLLoader.load(getClass().getResource("/application/serveurMenu.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/application/Auth.fxml"));
             Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/application/styles.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.setTitle("Restaurant Awled Moufida");
             primaryStage.show();
