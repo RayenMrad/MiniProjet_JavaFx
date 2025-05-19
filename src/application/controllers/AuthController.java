@@ -100,7 +100,7 @@ public class AuthController {
 				String fxmlFile;
 				switch (user.getRole().toUpperCase()) {
 				case "ADMIN":
-					fxmlFile = "/application/admindashboard.fxml";
+					fxmlFile = "/application/adminDashboard.fxml";
 					break;
 				case "SERVEUR":
 					fxmlFile = "/application/serveurMenu.fxml";

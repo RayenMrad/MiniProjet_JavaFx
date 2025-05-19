@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="763.0" prefWidth="1336.0" style="-fx-border-color: #05204A;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.AdminController">
+   <children>
+      <Pane layoutY="-6.0" prefHeight="770.0" prefWidth="238.0" style="-fx-background-color: #05204A;">
+         <children>
+            <Label layoutX="20.0" layoutY="24.0" text="Restaurant Awled Moufida" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Line endX="118.99998474121094" endY="-40.0" layoutX="119.0" layoutY="104.0" startX="-119.0" startY="-40.0" stroke="WHITE" />
+            <Circle fill="WHITE" layoutX="37.0" layoutY="98.0" radius="23.0" stroke="WHITE" strokeType="INSIDE" />
+            <Label fx:id="welcomeLabel" layoutX="73.0" layoutY="85.0" text="Bienvenue, Admin" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="consultCommandesBtn" layoutX="11.0" layoutY="193.0" mnemonicParsing="false" onAction="#onConsultCommandes" prefHeight="46.0" prefWidth="217.0" text="Consulter les commandes">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="logoutBtn" layoutX="11.0" layoutY="680.0" mnemonicParsing="false" onAction="#onLogout" prefHeight="46.0" prefWidth="217.0" text="Déconnexion">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="menuBtn" layoutX="11.0" layoutY="350.0" mnemonicParsing="false" onAction="#onMenu" prefHeight="46.0" prefWidth="217.0" text="Menu">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="consultUsersBtn" layoutX="11.0" layoutY="273.0" mnemonicParsing="false" onAction="#onConsultUsers" prefHeight="46.0" prefWidth="217.0" text="Consulter les users">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="253.0" layoutY="28.0" prefHeight="702.0" prefWidth="1071.0" style="-fx-border-radius: 10; -fx-border-color: #05204A;">
+         <children>
+            <ScrollPane layoutX="12.0" layoutY="54.0" prefHeight="625.0" prefWidth="1051.0">
+               <content>
+                  <AnchorPane fx:id="menuPane" prefHeight="623.0" prefWidth="1050.0">
+                     <children>
+                        <HBox layoutX="9.0" layoutY="14.0" prefHeight="184.0" prefWidth="1019.0" spacing="20">
+                           <children>
+                              <VBox prefHeight="150.0" prefWidth="219.0" alignment="CENTER">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0">
+                                       <image>
+                                          <Image url="@../../../../Downloads/customer-icon-png-favpng-d8BDESmN8dGhRkwwyZE5zs9j1.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="customersLabel" text="0" textFill="#05204A">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Customers Today" textFill="#05204A" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="150.0" prefWidth="219.0" alignment="CENTER">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0">
+                                       <image>
+                                          <Image url="@../../../../Downloads/income-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="todayIncomeLabel" text="0.00 DT" textFill="#05204A">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Today's Income" textFill="#05204A" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="150.0" prefWidth="219.0" alignment="CENTER">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0">
+                                       <image>
+                                          <Image url="@../../../../Downloads/total-income-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="totalIncomeLabel" text="0.00 DT" textFill="#05204A">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Total Income" textFill="#05204A" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="150.0" prefWidth="219.0" alignment="CENTER">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0">
+                                       <image>
+                                          <Image url="@../../../../Downloads/products-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="soldProductsLabel" text="0" textFill="#05204A">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Products Sold" textFill="#05204A" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <LineChart layoutX="14.0" layoutY="209.0" prefHeight="400.0" prefWidth="500.0">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <StackedBarChart layoutX="525.0" layoutY="202.0" prefHeight="400.0" prefWidth="500.0">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </StackedBarChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+   </children>
+</Pane>
