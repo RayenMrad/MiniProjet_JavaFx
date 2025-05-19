@@ -106,7 +106,7 @@ public class AuthController {
 					fxmlFile = "/application/serveurMenu.fxml";
 					break;
 				case "CLIENT":
-					fxmlFile = "/application/views/clientInterface.fxml";
+					fxmlFile = "/application/clientMenu.fxml";
 					break;
 				default:
 					loginError.setText("Unknown user role: " + user.getRole());
