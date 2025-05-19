@@ -7,23 +7,26 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #05204A;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ConsultCommandesController">
-   <children>
-      <Label layoutX="14.0" layoutY="14.0" text="Consulter les Commandes">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <TableView fx:id="ordersTableView" layoutX="14.0" layoutY="50.0" prefHeight="300.0" prefWidth="572.0">
-         <columns>
-            <TableColumn fx:id="orderIdColumn" prefWidth="75.0" text="ID" />
-            <TableColumn fx:id="tableNumberColumn" prefWidth="100.0" text="Table #" />
-            <TableColumn fx:id="orderDateTimeColumn" prefWidth="200.0" text="Date/Heure" />
-            <TableColumn fx:id="totalAmountColumn" prefWidth="97.0" text="Montant Total (DT)" />
-            <TableColumn fx:id="statusColumn" prefWidth="100.0" text="Statut" />
-            <TableColumn fx:id="detailsColumn" prefWidth="50.0" text="Détails" />
-         </columns>
-      </TableView>
-      <Button fx:id="closeBtn" layoutX="511.0" layoutY="360.0" mnemonicParsing="false" onAction="#onClose" prefHeight="25.0" prefWidth="75.0" text="Fermer" />
-   </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="680.0" style="-fx-border-color: #05204A;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ConsultCommandesController">
+<children>
+<Label layoutX="14.0" layoutY="14.0" text="Consulter les Commandes">
+<font>
+<Font name="System Bold" size="18.0" />
+</font>
+</Label>
+<TableView fx:id="ordersTableView" layoutX="14.0" layoutY="50.0" prefHeight="300.0" prefWidth="652.0">
+<columns>
+<TableColumn fx:id="orderIdColumn" prefWidth="75.0" text="ID" />
+<TableColumn fx:id="tableNumberColumn" prefWidth="90.0" text="Table #" />
+<TableColumn fx:id="orderDateTimeColumn" prefWidth="170.0" text="Date/Heure" />
+<TableColumn fx:id="totalAmountColumn" prefWidth="97.0" text="Montant Total (DT)" />
+<TableColumn fx:id="statusColumn" prefWidth="90.0" text="Statut" />
+<TableColumn fx:id="detailsColumn" prefWidth="60.0" text="Détails" />
+<TableColumn fx:id="editStatusColumn" prefWidth="70.0" text="Modifier" />
+
+</columns>
+</TableView>
+<Button fx:id="closeBtn" layoutX="591.0" layoutY="360.0" mnemonicParsing="false" onAction="#onClose" prefHeight="25.0" prefWidth="75.0" text="Fermer" />
+<Button fx:id="refreshBtn" layoutX="497.0" layoutY="360.0" mnemonicParsing="false" onAction="#onRefresh" prefHeight="25.0" prefWidth="85.0" text="Actualiser" />
+</children>
 </Pane>
